@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding-top: 120px;">
+    <div class="container">
+        <h2 class="section-title">Publications</h2>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                {% for publication in publications %}
+                <div class="publication-item">
+                    <div class="publication-title">{{ publication.title }}</div>
+                    <div class="publication-meta">{{ publication.authors }} | {{ publication.journal }} | {{ publication.year }}</div>
+                    <p class="mt-2">{{ publication.description }}</p>
+                </div>
+                {% empty %}
+                <div class="publication-item">
+                    <div class="publication-title">High-performance triboelectric nanogenerator based on 2D materials</div>
+                    <div class="publication-meta">K. Uday Kumar et al. | Energy Journal | 2024</div>
+                    <p class="mt-2">Research on advanced nanogenerator technologies.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

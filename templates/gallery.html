@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="padding-top: 120px;">
+    <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <!-- <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Lab+Equipment" class="card-img-top" alt="Laboratory"> -->
+                    <img src="{% static 'images/slide1.jpg' %}" class="card-img-top" alt="Laboratory">
+                    <div class="card-body">
+                        <h6>Research Laboratory</h6>
+                        <p class="text-muted">State-of-the-art equipment for nanomaterial synthesis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <!-- <img src="https://via.placeholder.com/400x300/3b82f6/ffffff?text=Conference" class="card-img-top" alt="Conference"> -->
+                    <img src="{% static 'images/slide3.jpg' %}" class="card-img-top" alt="Confrence">
+                    <div class="card-body">
+                        <h6>Conference Presentation</h6>
+                        <p class="text-muted">Presenting research at international conferences</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <!-- <img src="https://via.placeholder.com/400x300/f59e0b/ffffff?text=Students" class="card-img-top" alt="Students"> -->
+                    <img src="{% static 'images/slide4.jpg' %}" class="card-img-top" alt="Students">
+                    <div class="card-body">
+                        <h6>Research Group</h6>
+                        <p class="text-muted">Working with Ph.D. and M.Tech students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

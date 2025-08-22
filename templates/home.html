@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 hero-content">
+                <h1 class="animate__animated animate__fadeInUp">Prof. Kanapuram Udaykumar</h1>
+                <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+                    Assistant Professor, Department of Physics<br>
+                    National Institute of Technology Warangal
+                </p>
+                <p class="animate__animated animate__fadeInUp animate__delay-2s">
+                    Specializing in Nanogenerators, Energy Harvesting, and Supercapacitors
+                </p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <!-- <img src="{% static 'images/profile.jpg' %}" alt="Prof. Kanapuram Udaykumar"
+                     class="profile-img animate__animated animate__fadeIn animate__delay-1s"
+                     onerror="this.src='https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Prof.+UK'"> -->
+                <img src="https://erp.nitw.ac.in/ext/profile/getUserImage/ph-kanapuram.udaykumar"
+                    alt="Prof. Kanapuram Udaykumar"
+                    class="profile-img animate__animated animate__fadeIn animate__delay-1s"
+                    onerror="this.src='https://via.placeholder.com/300x300/1e3a8a/ffffff?text=Prof.+UK'">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slider-section">
+    <div class="container">
+        <h2 class="section-title">Research Highlights</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slide">
+                    <img src="{% static 'images/slide1.jpg' %}" alt="Research Laboratory"
+                         onerror="this.src='https://via.placeholder.com/1200x400/1e3a8a/ffffff?text=Nanogenerator+Research+Lab'">
+                    <div class="slide-content">
+                        <div class="slide-title">Advanced Nanogenerator Research Laboratory</div>
+                        <div class="slide-description">State-of-the-art equipment for developing high-performance triboelectric nanogenerators.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/slide2.jpg' %}" alt="2D Materials"
+                         onerror="this.src='https://via.placeholder.com/1200x400/3b82f6/ffffff?text=2D+Materials+Synthesis'">
+                    <div class="slide-content">
+                        <div class="slide-title">2D Materials & Metal Organic Frameworks</div>
+                        <div class="slide-description">Synthesis and characterization of 2D MoS₂ and MOF hybrid films.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/slide3.jpg' %}" alt="Energy Devices"
+                         onerror="this.src='https://via.placeholder.com/1200x400/f59e0b/ffffff?text=Energy+Harvesting+Devices'">
+                    <div class="slide-content">
+                        <div class="slide-title">Self-Powered IoT Systems</div>
+                        <div class="slide-description">Development of autonomous energy harvesting systems for IoT devices.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/slide4.jpg' %}" alt="Device Testing"
+                         onerror="this.src='https://via.placeholder.com/1200x400/059669/ffffff?text=Device+Testing'">
+                    <div class="slide-content">
+                        <div class="slide-title">Device Characterization & Testing</div>
+                        <div class="slide-description">Comprehensive testing and performance evaluation of nanogenerator devices.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="{% static 'images/slide1.jpg' %}" alt="Collaboration"
+                         onerror="this.src='https://via.placeholder.com/1200x400/dc2626/ffffff?text=International+Collaboration'">
+                    <div class="slide-content">
+                        <div class="slide-title">International Research Collaboration</div>
+                        <div class="slide-description">Active partnerships with leading research institutions worldwide.</div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-nav prev" onclick="previousSlide()"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-nav next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots" id="sliderDots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="research-icon mx-auto"><i class="fas fa-microscope"></i></div>
+                        <h5>Research Focus</h5>
+                        <p>Nanogenerators, Energy Harvesting, Supercapacitors, Metal Nanoparticles</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="research-icon mx-auto"><i class="fas fa-award"></i></div>
+                        <h5>Citations</h5>
+                        <p>845+ citations on Google Scholar with significant research contributions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="research-icon mx-auto"><i class="fas fa-university"></i></div>
+                        <h5>Institution</h5>
+                        <p>National Institute of Technology Warangal - Premier Engineering Institute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
