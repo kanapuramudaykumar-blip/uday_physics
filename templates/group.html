@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div style="padding-top: 120px;">
@@ -39,6 +40,113 @@
                 </div>
             </div>
         </div>
+
+        <!-- Research Scholars Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3 class="text-center mb-4" style="color: var(--primary-color); font-weight: 600;">Current Research Scholars</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" 
+                             alt="Rajesh Kumar" class="scholar-image">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Rajesh Kumar</h5>
+                        <p class="text-muted mb-2">Ph.D. Scholar (2022-Present)</p>
+                        <p class="card-text"><strong>Research Area:</strong> Triboelectric Nanogenerators for Wearable Electronics</p>
+                        <p class="card-text small">Working on developing flexible TENG devices for harvesting mechanical energy from human motion.</p>
+                        <div class="scholar-contact">
+                            <i class="fas fa-envelope me-2"></i>
+                            <small>rajesh.kumar@student.nitw.ac.in</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" 
+                             alt="Priya Sharma" class="scholar-image">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Priya Sharma</h5>
+                        <p class="text-muted mb-2">Ph.D. Scholar (2021-Present)</p>
+                        <p class="card-text"><strong>Research Area:</strong> Piezoelectric Nanogenerators for Self-Powered Sensors</p>
+                        <p class="card-text small">Investigating ZnO and BaTiO₃ based piezoelectric materials for energy harvesting applications.</p>
+                        <div class="scholar-contact">
+                            <i class="fas fa-envelope me-2"></i>
+                            <small>priya.sharma@student.nitw.ac.in</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" 
+                             alt="Amit Singh" class="scholar-image">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Amit Singh</h5>
+                        <p class="text-muted mb-2">M.Tech Student (2024-Present)</p>
+                        <p class="card-text"><strong>Research Area:</strong> Hybrid Nanogenerators for Environmental Energy Harvesting</p>
+                        <p class="card-text small">Developing hybrid PENG-TENG systems for harvesting energy from wind and vibrations.</p>
+                        <div class="scholar-contact">
+                            <i class="fas fa-envelope me-2"></i>
+                            <small>amit.singh@student.nitw.ac.in</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+.scholar-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scholar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.scholar-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.scholar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.scholar-image:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.scholar-contact {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.scholar-contact i {
+    color: var(--primary-color);
+}
+</style>
 {% endblock %}

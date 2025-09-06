@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div style="padding-top: 120px;">
@@ -7,13 +8,13 @@
             <div class="col-12">
                 <ul class="nav nav-pills justify-content-center" id="aboutTabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#about-content">About Me</a>
+                        <a class="nav-link active" href="#about-content" data-target="about-content">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#views-content">My Views</a>
+                        <a class="nav-link" href="#views-content" data-target="views-content">My Views</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#awards-content">Awards</a>
+                        <a class="nav-link" href="#awards-content" data-target="awards-content">Awards</a>
                     </li>
                 </ul>
             </div>
@@ -26,7 +27,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5>Professional Journey</h5>
-                            <p>Dr. Kanapuram Udaykumar is an accomplished Assistant Professor in the Department of Physics at NIT Warangal.</p>
+                            <p>Dr. Udaykumar Khanapuram is an accomplished Assistant Professor in the Department of Physics at NIT Warangal.</p>
                             <h5>Research Expertise</h5>
                             <p>Professor Udaykumar's research focuses on cutting-edge technologies in energy harvesting and nanogenerators.</p>
                         </div>

@@ -3,8 +3,8 @@ from .models import Publication, ResearchProject, ContactMessage
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
-    list_display = ['title', 'journal', 'year']
-    list_filter = ['year', 'journal']
+    list_display = ['title', 'category', 'journal', 'volume', 'page_no', 'publication_date']
+    list_filter = ['category', 'publication_date', 'journal']
     search_fields = ['title', 'authors']
 
 @admin.register(ResearchProject)

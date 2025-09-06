@@ -1,16 +1,27 @@
 from django.db import models
 
 class Publication(models.Model):
+    CATEGORY_CHOICES = [
+        ('journals', 'Journals'),
+        ('conference', 'Conference'),
+        ('book_chapters', 'Book Chapters'),
+        ('patents', 'Patents'),
+    ]
+    
     title = models.CharField(max_length=500)
     authors = models.TextField()
-    journal = models.CharField(max_length=200)
-    year = models.IntegerField()
+    journal = models.CharField(max_length=200, blank=True)
+    volume = models.CharField(max_length=50, blank=True)
+    page_no = models.CharField(max_length=50, blank=True)
+    publication_date = models.DateField(help_text="Publication date (Day/Month/Year)")
     description = models.TextField(blank=True)
     url = models.URLField(blank=True)
+    publication_link = models.URLField(blank=True, help_text="Direct link to the publication")
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='journals')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-year', '-created_at']
+        ordering = ['-publication_date', '-created_at']
 
     def __str__(self):
         return self.title

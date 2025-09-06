@@ -1,26 +1,129 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div style="padding-top: 120px;">
     <div class="container">
         <h2 class="section-title">Publications</h2>
+        
+        <!-- Category Navigation Pills -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center" id="publicationTabs">
+                    {% for category_key, category_name in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_category == category_key %}active{% endif %}" 
+                           href="?category={{ category_key }}">{{ category_name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 {% for publication in publications %}
                 <div class="publication-item">
-                    <div class="publication-title">{{ publication.title }}</div>
-                    <div class="publication-meta">{{ publication.authors }} | {{ publication.journal }} | {{ publication.year }}</div>
-                    <p class="mt-2">{{ publication.description }}</p>
+                    <div class="publication-title">
+                        {% if publication.publication_link %}
+                            <a href="{{ publication.publication_link }}" target="_blank" class="publication-link">
+                                {{ publication.title }}
+                            </a>
+                        {% else %}
+                            {{ publication.title }}
+                        {% endif %}
+                    </div>
+                    <div class="publication-meta">
+                        {{ publication.authors }} | {{ publication.journal }}
+                        {% if publication.volume %} | Vol. {{ publication.volume }}{% endif %}
+                        {% if publication.page_no %} | Pages {{ publication.page_no }}{% endif %}
+                        | {{ publication.publication_date|date:"d M Y" }}
+                    </div>
+                    {% if publication.description %}
+                        <p class="mt-2">{{ publication.description|truncatewords:50 }}</p>
+                    {% endif %}
                 </div>
                 {% empty %}
+                <!-- Default dummy data for different categories -->
+                {% if current_category == 'journals' %}
                 <div class="publication-item">
                     <div class="publication-title">High-performance triboelectric nanogenerator based on 2D materials</div>
-                    <div class="publication-meta">K. Uday Kumar et al. | Energy Journal | 2024</div>
-                    <p class="mt-2">Research on advanced nanogenerator technologies.</p>
+                    <div class="publication-meta">K. Uday Kumar et al. | Nature Energy | Vol. 15 | Pages 123-135 | 15 Mar 2024</div>
+                    <p class="mt-2">Research on advanced nanogenerator technologies using 2D materials for enhanced energy harvesting.</p>
                 </div>
+                <div class="publication-item">
+                    <div class="publication-title">Piezoelectric nanogenerators for self-powered wireless sensor networks</div>
+                    <div class="publication-meta">K. Uday Kumar, P. Sharma, R. Singh | Advanced Materials | Vol. 12 | Pages 45-58 | 10 Sep 2023</div>
+                    <p class="mt-2">Development of piezoelectric nanogenerators for autonomous wireless sensor applications.</p>
+                </div>
+                {% elif current_category == 'conference' %}
+                <div class="publication-item">
+                    <div class="publication-title">Flexible Triboelectric Nanogenerators for Wearable Electronics</div>
+                    <div class="publication-meta">K. Uday Kumar et al. | IEEE Conference on MEMS | Pages 245-250 | 20 Jun 2024</div>
+                    <p class="mt-2">Presented research on flexible TENG devices at international MEMS conference.</p>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Energy Harvesting from Human Motion Using Hybrid Nanogenerators</div>
+                    <div class="publication-meta">K. Uday Kumar, A. Singh | International Conference on Energy | Pages 156-162 | 05 Nov 2023</div>
+                    <p class="mt-2">Conference paper on hybrid energy harvesting systems for human motion.</p>
+                </div>
+                {% elif current_category == 'book_chapters' %}
+                <div class="publication-item">
+                    <div class="publication-title">Nanogenerators: Principles and Applications</div>
+                    <div class="publication-meta">K. Uday Kumar | Springer Handbook of Nanotechnology | Pages 789-825 | 12 Aug 2024</div>
+                    <p class="mt-2">Comprehensive book chapter covering the fundamentals and applications of nanogenerators.</p>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Energy Harvesting Technologies for IoT Applications</div>
+                    <div class="publication-meta">K. Uday Kumar, P. Sharma | Elsevier IoT Handbook | Pages 312-345 | 18 Feb 2023</div>
+                    <p class="mt-2">Book chapter focusing on energy harvesting solutions for Internet of Things devices.</p>
+                </div>
+                {% elif current_category == 'patents' %}
+                <div class="publication-item">
+                    <div class="publication-title">Flexible Triboelectric Nanogenerator for Wearable Devices</div>
+                    <div class="publication-meta">K. Uday Kumar et al. | Indian Patent Office | Patent No. 202441015234 | 25 Jan 2024</div>
+                    <p class="mt-2">Patent for innovative flexible TENG design for wearable electronic applications.</p>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Hybrid Piezo-Triboelectric Energy Harvester</div>
+                    <div class="publication-meta">K. Uday Kumar, A. Singh | US Patent Office | Patent No. US11,234,567 | 14 Jul 2023</div>
+                    <p class="mt-2">Patent for hybrid energy harvesting device combining piezoelectric and triboelectric mechanisms.</p>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
+<style>
+.publication-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.publication-link:hover {
+    color: var(--dark-primary);
+    text-decoration: underline;
+}
+
+.nav-pills .nav-link {
+    color: var(--text-light);
+    margin: 0 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgba(217, 119, 6, 0.1);
+    color: var(--primary-color);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+</style>
 {% endblock %}

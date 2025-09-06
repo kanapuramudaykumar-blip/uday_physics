@@ -17,8 +17,20 @@ def research(request):
     return render(request, 'research.html', context)
 
 def publications(request):
-    publications = Publication.objects.all()
-    context = {'publications': publications}
+    # Get category from URL parameter, default to 'journals'
+    category = request.GET.get('category', 'journals')
+    
+    # Filter publications by category
+    publications = Publication.objects.filter(category=category)
+    
+    # Get all categories for the dropdown
+    categories = Publication.CATEGORY_CHOICES
+    
+    context = {
+        'publications': publications,
+        'categories': categories,
+        'current_category': category
+    }
     return render(request, 'publications.html', context)
 
 def group(request):
