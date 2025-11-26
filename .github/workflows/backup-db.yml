@@ -1,0 +1,27 @@
+name: Backup SQLite DB from Render and Redeploy
+
+on:
+  workflow_dispatch:   # Run manually ONLY when you want updated deployment
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download latest database from Render
+        run: |
+          curl -L "https://uday4bharath.onrender.com/backup-db/?token=mysecret123" -o db.sqlite3
+
+      - name: Commit and push updated database
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add db.sqlite3
+          git commit -m "Auto-backup DB before deploy" || echo "No changes"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kanapuramudaykumar-blip/uday_physics.git HEAD:main
