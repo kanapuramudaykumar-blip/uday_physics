@@ -56,3 +56,22 @@ def contact_submit(request):
         return JsonResponse({'status': 'success', 'message': 'Message sent successfully!'})
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': 'Failed to send message.'})
+
+
+
+
+
+
+from django.http import FileResponse, HttpResponseForbidden
+from django.conf import settings
+import os
+
+def backup_db_view(request):
+    token = request.GET.get("token")
+    SECRET_TOKEN = os.environ.get("DB_DOWNLOAD_TOKEN")  # put this in Render env
+
+    if token != SECRET_TOKEN:
+        return HttpResponseForbidden("Unauthorized")
+
+    db_path = os.path.join(settings.BASE_DIR, 'db.sqlite3')
+    return FileResponse(open(db_path, 'rb'), as_attachment=True, filename='db.sqlite3')
