@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-yimz!e@3s=q+8$9aq^_*z5h4+z731n3=$g*=)poq-@&z0itnv0
 DEBUG = False
 
 ALLOWED_HOSTS = ["uday4bharath.com", "www.uday4bharath.com", "uday4bharath.onrender.com"]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://uday4bharath.com",
+    "https://www.uday4bharath.com"
+]
 
 # Application definition
 
