@@ -2,14 +2,17 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-from .models import Publication, ResearchProject, ContactMessage
+from django.core.paginator import Paginator
+from .models import Publication, ResearchProject, ContactMessage, MyView
 import json
 
 def home(request):
     return render(request, 'home.html')
 
 def about(request):
-    return render(request, 'about.html')
+    my_views = MyView.objects.all()
+    context = {'my_views': my_views}
+    return render(request, 'about.html', context)
 
 def research(request):
     projects = ResearchProject.objects.all()
@@ -21,7 +24,12 @@ def publications(request):
     category = request.GET.get('category', 'journals')
     
     # Filter publications by category
-    publications = Publication.objects.filter(category=category)
+    publications_list = Publication.objects.filter(category=category)
+    
+    # Pagination
+    paginator = Paginator(publications_list, 5)
+    page_number = request.GET.get('page')
+    publications = paginator.get_page(page_number)
     
     # Get all categories for the dropdown
     categories = Publication.CATEGORY_CHOICES

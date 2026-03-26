@@ -5,38 +5,145 @@
 <div style="padding-top: 120px;">
     <div class="container">
         <h2 class="section-title">Gallery</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <!-- <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Lab+Equipment" class="card-img-top" alt="Laboratory"> -->
-                    <img src="{% static 'images/slide1.jpg' %}" class="card-img-top" alt="Laboratory">
-                    <div class="card-body">
-                        <h6>Research Laboratory</h6>
-                        <p class="text-muted">State-of-the-art equipment for nanomaterial synthesis</p>
+        <div class="row mb-4">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center" id="galleryTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#instruments-content" data-target="instruments-content">Instruments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conferences-content" data-target="conferences-content">Conferences</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="instruments-content" class="about-section active">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Electrochemical Workstation.jpg' %}" class="card-img-top" alt="Electrochemical Workstation" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Electrochemical Workstation</h6>
+                            <p class="text-muted small">Advanced electrochemical analysis for energy devices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Raman Spectrometer.jpeg' %}" class="card-img-top" alt="Raman Spectrometer" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Raman Spectrometer</h6>
+                            <p class="text-muted small">Structural analysis and material characterization.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Probe Sonicator.jpg' %}" class="card-img-top" alt="Probe Sonicator" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Probe Sonicator</h6>
+                            <p class="text-muted small">Ultrasonic dispersion of nanomaterials.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Hot Air Oven.jpg' %}" class="card-img-top" alt="Hot Air Oven" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Hot Air Oven</h6>
+                            <p class="text-muted small">Drying and thermal treatment of samples.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Bench Top Centrifuge.jpg' %}" class="card-img-top" alt="Bench Top Centrifuge" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Bench Top Centrifuge</h6>
+                            <p class="text-muted small">Used for separation processes in material research.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Vacuum Oven.jpg' %}" class="card-img-top" alt="Vacuum Oven" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Vacuum Oven</h6>
+                            <p class="text-muted small">Drying processes under controlled vacuum conditions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/Instruments/Analytical Balance.jpg' %}" class="card-img-top" alt="Analytical Balance" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Analytical Balance</h6>
+                            <p class="text-muted small">High-precision measurements for nanomaterial synthesis.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <!-- <img src="https://via.placeholder.com/400x300/3b82f6/ffffff?text=Conference" class="card-img-top" alt="Conference"> -->
-                    <img src="{% static 'images/slide3.jpg' %}" class="card-img-top" alt="Confrence">
-                    <div class="card-body">
-                        <h6>Conference Presentation</h6>
-                        <p class="text-muted">Presenting research at international conferences</p>
+        </div>
+
+        <div id="conferences-content" class="about-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/slide3.jpg' %}" class="card-img-top" alt="Conference" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>International Conference on Energy Materials</h6>
+                            <p class="text-muted small">Paris, France - 2024</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <!-- <img src="https://via.placeholder.com/400x300/f59e0b/ffffff?text=Students" class="card-img-top" alt="Students"> -->
-                    <img src="{% static 'images/slide4.jpg' %}" class="card-img-top" alt="Students">
-                    <div class="card-body">
-                        <h6>Research Group</h6>
-                        <p class="text-muted">Working with Ph.D. and M.Tech students</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/slide4.jpg' %}" class="card-img-top" alt="Conference" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>Symposium on Flexible Electronics</h6>
+                            <p class="text-muted small">Tokyo, Japan - 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/slide1.jpg' %}" class="card-img-top" alt="Conference" style="height: 250px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h6>National Summit on Smart sensors</h6>
+                            <p class="text-muted small">New Delhi, India - 2023</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('#galleryTabs .nav-link');
+    const sections = document.querySelectorAll('.about-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            sections.forEach(section => {
+                section.style.display = 'none';
+                section.classList.remove('active');
+            });
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                setTimeout(() => {
+                    targetSection.classList.add('active');
+                }, 10);
+            }
+        });
+    });
+});
+</script>
 {% endblock %}

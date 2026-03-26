@@ -40,12 +40,40 @@
             <h2 class="section-title">My Views</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Research Philosophy</h5>
-                            <p>"Science is not just about discovering new phenomena, but about understanding how we can harness these discoveries for the betterment of humanity."</p>
+                    {% if my_views %}
+                        {% for view in my_views %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#viewModal{{ view.id }}">{{ view.title }}</a></h5>
+                                <p class="mb-0">{{ view.description }}</p>
+                            </div>
                         </div>
-                    </div>
+
+                        <!-- Modal for View {{ view.id }} -->
+                        <div class="modal fade" id="viewModal{{ view.id }}" tabindex="-1" aria-labelledby="viewModalLabel{{ view.id }}" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="viewModalLabel{{ view.id }}">{{ view.title }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ view.full_view|linebreaks }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="text-muted">No views added yet.</p>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

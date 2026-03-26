@@ -48,3 +48,15 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.subject}"
+
+class MyView(models.Model):
+    title = models.CharField(max_length=200, default="Untitled View", help_text="Title of the view")
+    description = models.CharField(max_length=500, help_text="Short description shown in the list")
+    full_view = models.TextField(help_text="Complete view shown in the popup")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title

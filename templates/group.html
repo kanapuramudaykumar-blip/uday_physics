@@ -4,38 +4,71 @@ i{% extends 'base.html' %}
 {% block content %}
 <div style="padding-top: 120px;">
     <div class="container">
-        <h2 class="section-title">Research Group</h2>
+        <h2 class="section-title">Collaborators</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" alt="Prof. John Doe" class="scholar-image"
+                            style="object-fit: contain;">
+                    </div>
                     <div class="card-body text-center">
-                        <div class="research-icon mx-auto mb-3">
-                            <i class="fas fa-user-graduate"></i>
+                        <h5 class="card-title">Prof. John Doe</h5>
+                        <p class="text-muted mb-2">Foreign Collaborator</p>
+                        <p class="card-text"><strong>Institute:</strong> MIT, USA</p>
+                        <p class="card-text small">Collaborating on advanced nanomaterials and energy storage.</p>
+                        <div class="scholar-contact">
+                            <a href="mailto:johndoe@mit.edu" class="text-decoration-none d-block"><i
+                                    class="fas fa-envelope me-2"></i><small>johndoe@mit.edu</small></a>
+                            <a href="tel:+1234567890" class="text-decoration-none d-block"><i
+                                    class="fas fa-phone me-2"></i><small>+1 234 567 890</small></a>
+                            <a href="https://example.com" target="_blank" class="text-decoration-none d-block"><i
+                                    class="fas fa-globe me-2"></i><small>Website</small></a>
                         </div>
-                        <h5>Ph.D. Students</h5>
-                        <p>Currently supervising Ph.D. scholars working on nanogenerator technologies.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" alt="Dr. Jane Smith" class="scholar-image"
+                            style="object-fit: contain;">
+                    </div>
                     <div class="card-body text-center">
-                        <div class="research-icon mx-auto mb-3">
-                            <i class="fas fa-users"></i>
+                        <h5 class="card-title">Dr. Jane Smith</h5>
+                        <p class="text-muted mb-2">National Collaborator</p>
+                        <p class="card-text"><strong>Institute:</strong> IIT Bombay</p>
+                        <p class="card-text small">Joint research on flexible electronics and triboelectric devices.</p>
+                        <div class="scholar-contact">
+                            <a href="mailto:janesmith@iitb.ac.in" class="text-decoration-none d-block"><i
+                                    class="fas fa-envelope me-2"></i><small>janesmith@iitb.ac.in</small></a>
+                            <a href="tel:+919876543210" class="text-decoration-none d-block"><i
+                                    class="fas fa-phone me-2"></i><small>+91 9876543210</small></a>
+                            <a href="https://example.com" target="_blank" class="text-decoration-none d-block"><i
+                                    class="fas fa-globe me-2"></i><small>Website</small></a>
                         </div>
-                        <h5>PG Students</h5>
-                        <p>Mentoring PG students in nanomaterials and energy harvesting projects.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 scholar-card">
+                    <div class="scholar-image-container">
+                        <img src="{% static 'images/scholer1.jpeg' %}" alt="Dr. Jane Smith" class="scholar-image"
+                            style="object-fit: contain;">
+                    </div>
                     <div class="card-body text-center">
-                        <div class="research-icon mx-auto mb-3">
-                            <i class="fas fa-handshake"></i>
+                        <h5 class="card-title">Dr. Jane Smith</h5>
+                        <p class="text-muted mb-2">National Collaborator</p>
+                        <p class="card-text"><strong>Institute:</strong> IIT Bombay</p>
+                        <p class="card-text small">Joint research on flexible electronics and triboelectric devices.</p>
+                        <div class="scholar-contact">
+                            <a href="mailto:janesmith@iitb.ac.in" class="text-decoration-none d-block"><i
+                                    class="fas fa-envelope me-2"></i><small>janesmith@iitb.ac.in</small></a>
+                            <a href="tel:+919876543210" class="text-decoration-none d-block"><i
+                                    class="fas fa-phone me-2"></i><small>+91 9876543210</small></a>
+                            <a href="https://example.com" target="_blank" class="text-decoration-none d-block"><i
+                                    class="fas fa-globe me-2"></i><small>Website</small></a>
                         </div>
-                        <h5>Collaborators</h5>
-                        <p>Active collaborations with national and international research institutes.</p>
                     </div>
                 </div>
             </div>
@@ -44,21 +77,23 @@ i{% extends 'base.html' %}
         <!-- Research Scholars Section -->
         <div class="row mt-5">
             <div class="col-12">
-                <h3 class="text-center mb-4" style="color: var(--primary-color); font-weight: 600;">Current Research Scholars</h3>
+                <h3 class="text-center mb-4" style="color: var(--primary-color); font-weight: 600;">Current Research
+                    Scholars</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card h-100 scholar-card">
                     <div class="scholar-image-container">
-                        <img src="{% static 'images/Rajesh_Katru_Image.jpg' %}" 
-                             alt="Rajesh Kumar" class="scholar-image">
+                        <img src="{% static 'images/Rajesh_Katru_Image.jpg' %}" alt="Rajesh Kumar"
+                            class="scholar-image">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Rajesh Katru</h5>
                         <p class="text-muted mb-2">Ph.D. Scholar (2023-Present)</p>
                         <p class="card-text"><strong>Research Area:</strong> Supercapacitors</p>
-                        <p class="card-text small">Working on developing 2D material based flexible and solid-state energy storage devices.</p>
+                        <p class="card-text small">Working on developing 2D material based flexible and solid-state
+                            energy storage devices.</p>
                         <div class="scholar-contact">
                             <i class="fas fa-envelope me-2"></i>
                             <small>rk23phr1r05@student.nitw.ac.in</small>
@@ -69,14 +104,15 @@ i{% extends 'base.html' %}
             <div class="col-md-4 mb-4">
                 <div class="card h-100 scholar-card">
                     <div class="scholar-image-container">
-                        <img src="{% static 'images/Pembarti Raju.jpg' %}" 
-                             alt="Priya Sharma" class="scholar-image">
+                        <img src="{% static 'images/Pembarti Raju.jpg' %}" alt="Pembarti Raju" class="scholar-image">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Raju Pembarti</h5>
                         <p class="text-muted mb-2">Ph.D. Scholar (2025-Present)</p>
-                        <p class="card-text"><strong>Research Area:</strong> Triboelectric Nanogenerators for Self-Powered Sensors</p>
-                        <p class="card-text small">Investigating MOF and MoS2 based materials for energy harvesting applications.</p>
+                        <p class="card-text"><strong>Research Area:</strong> Triboelectric Nanogenerators for
+                            Self-Powered Sensors</p>
+                        <p class="card-text small">Investigating MOF and MoS2 based materials for energy harvesting
+                            applications.</p>
                         <div class="scholar-contact">
                             <i class="fas fa-envelope me-2"></i>
                             <small>pr24phr2r01@student.nitw.ac.in</small>
@@ -87,8 +123,7 @@ i{% extends 'base.html' %}
             <div class="col-md-4 mb-4">
                 <div class="card h-100 scholar-card">
                     <div class="scholar-image-container">
-                        <img src="{% static 'images/Rajani Kumar K.jpg' %}" 
-                             alt="Amit Singh" class="scholar-image">
+                        <img src="{% static 'images/Rajani Kumar K.jpg' %}" alt="Rajani Kumar K" class="scholar-image">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Rajani Kumar K</h5>
@@ -105,8 +140,8 @@ i{% extends 'base.html' %}
             <div class="col-md-4 mb-4">
                 <div class="card h-100 scholar-card">
                     <div class="scholar-image-container">
-                        <img src="{% static 'images/Swet Sabuj Pattnayak.jpeg' %}" 
-                             alt="Swet Sabuj Pattnayak" class="scholar-image">
+                        <img src="{% static 'images/Swet Sabuj Pattnayak.jpeg' %}" alt="Swet Sabuj Pattnayak"
+                            class="scholar-image">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Swet Sabuj Pattnayak</h5>
@@ -125,46 +160,46 @@ i{% extends 'base.html' %}
 </div>
 
 <style>
-.scholar-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .scholar-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.scholar-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
+    .scholar-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
 
-.scholar-image-container {
-    position: relative;
-    overflow: hidden;
-    height: 250px;
-}
+    .scholar-image-container {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
 
-.scholar-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+    .scholar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
 
-.scholar-image:hover {
-    transform: scale(1.05);
-}
+    .scholar-image:hover {
+        transform: scale(1.05);
+    }
 
-.card-title {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
+    .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
 
-.scholar-contact {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
-}
+    .scholar-contact {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e5e7eb;
+    }
 
-.scholar-contact i {
-    color: var(--primary-color);
-}
+    .scholar-contact i {
+        color: var(--primary-color);
+    }
 </style>
 {% endblock %}

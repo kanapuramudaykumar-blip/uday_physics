@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publication, ResearchProject, ContactMessage
+from .models import Publication, ResearchProject, ContactMessage, MyView
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
@@ -19,3 +19,8 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_filter = ['created_at']
     search_fields = ['name', 'email', 'subject']
     readonly_fields = ['created_at']
+
+@admin.register(MyView)
+class MyViewAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'created_at']
+    search_fields = ['title', 'description', 'full_view']

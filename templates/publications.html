@@ -91,6 +91,32 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+                
+                {% if publications.has_other_pages %}
+                <nav aria-label="Publication pagination" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        {% if publications.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?category={{ current_category }}&page={{ publications.previous_page_number }}">Previous</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                        {% endif %}
+                        
+                        {% for i in publications.paginator.page_range %}
+                            {% if publications.number == i %}
+                                <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?category={{ current_category }}&page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if publications.has_next %}
+                            <li class="page-item"><a class="page-link" href="?category={{ current_category }}&page={{ publications.next_page_number }}">Next</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">Next</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
             </div>
         </div>
     </div>
