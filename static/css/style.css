@@ -389,6 +389,226 @@ body {
     background-color: var(--primary-color);
 }
 
+/* About page — resume timeline (same layout as reference); card matches rest of site: white on cream page */
+.about-resume-panel.card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    color: var(--text-dark);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-resume-panel.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 1;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(217, 119, 6, 0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+.about-resume-panel.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-resume-panel .card-body {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem 2.75rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-dark);
+}
+
+.about-resume-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.about-resume-kicker {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.about-resume-header-line {
+    flex: 1;
+    min-width: 100px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(
+        90deg,
+        var(--text-dark) 0%,
+        var(--text-dark) 33%,
+        var(--accent-color) 33%,
+        var(--primary-color) 85%,
+        var(--dark-primary) 100%
+    );
+}
+
+.about-cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 2.5rem;
+}
+
+.about-cv-download:hover {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+}
+
+.about-cv-download i {
+    font-size: 1rem;
+    color: inherit;
+}
+
+.about-resume-block-title {
+    font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+}
+
+.about-resume-block-title-spaced {
+    margin-top: 0.15rem;
+}
+
+.about-resume-block-title-in-timeline {
+    margin-top: 2.75rem;
+    margin-bottom: 1.25rem;
+    padding-left: 0;
+    margin-left: calc(-1.65rem - 0.4rem);
+    width: calc(100% + 1.65rem + 0.4rem);
+}
+
+.about-timeline {
+    position: relative;
+    padding-left: 1.65rem;
+    margin-left: 0.4rem;
+    border-left: 2px solid #d1d5db;
+}
+
+.about-timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 0;
+}
+
+.about-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.about-timeline-dot {
+    position: absolute;
+    left: calc(-1.65rem - 1px);
+    top: 0.38rem;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.35);
+}
+
+.about-timeline-body {
+    padding-top: 0;
+}
+
+.about-timeline-title {
+    font-size: clamp(0.9rem, 2.1vw, 1.06rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    line-height: 1.35;
+    color: var(--primary-color);
+    margin: 0 0 0.4rem;
+}
+
+.about-timeline-dept {
+    margin: 0 0 0.45rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.about-date-badge {
+    display: inline-block;
+    margin: 0.35rem 0 1rem;
+    padding: 0.28rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--text-dark);
+    background: #e5e7eb;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+}
+
+.about-detail-line {
+    margin: 0 0 0.55rem;
+    font-size: 0.98rem;
+    color: var(--text-dark);
+    line-height: 1.65;
+}
+
+.about-research-interests-block {
+    margin-bottom: 0.85rem;
+}
+
+.about-research-interests-block .about-detail-label {
+    display: inline;
+    margin-right: 0.25rem;
+}
+
+.about-research-piped {
+    display: inline;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.about-pipe {
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.about-detail-label {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.about-institute {
+    color: var(--dark-primary);
+    font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .hero h1 {
@@ -455,6 +675,15 @@ body {
         margin-right: 0;
         margin-bottom: 1rem;
     }
+    .about-resume-panel .card-body {
+        padding: 1.5rem 1.15rem;
+    }
+    .about-resume-kicker {
+        font-size: 0.95rem;
+    }
+    .about-timeline-title {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -482,5 +711,18 @@ body {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+    .about-cv-download {
+        width: 100%;
+        justify-content: center;
+    }
+    .about-resume-kicker {
+        order: 1;
+    }
+    .about-resume-header-line {
+        order: 2;
+        width: 100%;
+        flex-basis: 100%;
+        min-width: 0;
     }
 }
